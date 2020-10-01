@@ -1,0 +1,3 @@
+from textblob import TextBlob
+text = TextBlob("She is gret prson")
+print(text.correct())
