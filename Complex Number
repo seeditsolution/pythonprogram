@@ -1,0 +1,11 @@
+c = 3 +6j
+print(type(c))
+<class 'complex'>
+print(c)
+(3+6j)
+
+c1 = complex(3,6)
+print(type(c1))
+<class 'complex'>
+print(c1)
+(3+6j)
