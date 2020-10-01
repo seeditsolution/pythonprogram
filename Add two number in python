@@ -1,0 +1,3 @@
+/*add two number*/
+/print is use to output statement and "+ "is aarithmetic operator to add number*/
+print(3+4);
