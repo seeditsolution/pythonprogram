@@ -1,0 +1,16 @@
+
+def freq(no):
+	for i in range (no):
+		print("Input Element ",i+1);
+		num=int(input());
+		user_list.append(num);
+	print(user_list);
+
+	find_num=int(input("Element to search :"));
+	count=user_list.count(find_num);
+	print("Frequency  Is -:",count);
+
+
+no=int(input("Enter Num-"));
+user_list=list();
+freq(no)
