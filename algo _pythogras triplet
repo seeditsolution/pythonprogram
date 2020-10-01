@@ -1,0 +1,26 @@
+i = 0
+a = [0, 0, 0]
+ 
+n = int(input('Number of triples required: '))
+ 
+while i<n:
+ 
+    if i%2 == 0:    #even
+        a[0] = i
+        a[1] = int((i/2)**2 - 1)
+        a[2] = int((i/2)**2 + 1)
+    else:           #odd
+        a[0] = i
+        a[1] = int((i**2-1)/2)
+        a[2] = int((i**2+1)/2)
+ 
+    if (a[0] < a[1] and a[0] < a[2]):
+        #This is a new triple, print it
+        print(a)
+    else:
+        #This is a duplicate triple, do not print it.
+        #Increment n by 1 so that the loop will calculate one more triple
+        #to replace the current duplicate
+        n = n + 1
+ 
+    i = i + 1
