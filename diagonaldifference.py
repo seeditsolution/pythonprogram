@@ -1,22 +1,21 @@
-def diagonalDifference(arr) #function accepting a 2d array
+def diagonalDifference(arr):
+    '''Finds the diagonal Difference of 2D square matrix'''
 
-  sum1=0
-  sum2=0
-  res=0
-  for i in range(0,len(arr)):
-  sum1=sum1+arr[i][i]
-  sum2=sum2+arr[i][(len(arr)-1)-i]
-  res=sum1-sum2
-  return abs(res)
+    result,size = (0,len(arr))
+    for i in range(0,size):
+        result += arr[i][i] - arr[i][size-1-i]  #calculating difference
+    return abs(result)
+
 if __name__ == '__main__':
-fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-n = int(input().strip) #size
+    n = abs(int(input("Enter matrix size : ").strip())) #input martrix size
+    arr = []
 
-arr = []
+    for i in range(n):
+        lst = []
+        while(len(lst)!=n):
+            row = input(f"Enter {n} space separated values for row {i+1} : ")
+            lst = list(map(int,row.strip().split(" "))) #converting string to list
+        arr.append(lst)
 
-for _ in range(n):
-arr.append(list(map(int, input().rstrip().split())))
-
-print( diagonalDifference(arr))
-  
+    print( diagonalDifference(arr))
