@@ -1,0 +1,20 @@
+print('sup,user')
+boi = input('what is your name name boi: ')
+print("i guessed it, " + boi)
+print(boi + " ,here v r going to convert your weight into pounds(lbs) from kilograms")
+kgs = input("your weight in kgs: ")
+kga = int(kgs) * 0.49
+kg = 'get some more weight kid, eat pizzas. u r 🤣🤣🤣'
+kgb ='oh, workout football belly man. u r🤣🤣🤣🤣 '
+
+if kga>50:
+  print(kg)
+else:
+  print(kgb)
+    
+print(kga)
+print("pounds(lbs)")
+
+print("avoid the language😅, look code")
+print("please give me star , i am just 14 trying coding")
+print("to give a 🌟, tap the 3 dots and find star section and just tap on it please👍👍🤝")
