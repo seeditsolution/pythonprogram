@@ -1,0 +1,26 @@
+import csv
+filename=input("Enter the name of the file:")
+filename=filename+".csv"
+with open(filename,'r') as f:
+    reader=csv.reader(f)
+    data=list(reader)
+data=data[1:]
+x=[]
+y=[]
+for i in range(len(data)):
+    x.append(int(data[i][0]))
+    y.append(int(data[i][1]))
+xm=sum(x)/len(x)
+ym=sum(y)/len(y)
+xd2=[]
+xyd=[]
+for i in range(len(x)):
+    xd2.append((x[i]-xm)**2)
+    xyd.append((x[i]-xm)*(y[i]-ym))
+b1=sum(xyd)/sum(xd2)
+b0=ym-(b1*xm)
+print("y=",b0,"+",b1,"x")
+x2=int(input("Enter the value of x:"))
+y2=b0+b1*x2
+print("The predicted value of x is:",y2)
+
