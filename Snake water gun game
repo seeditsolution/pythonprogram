@@ -1,0 +1,76 @@
+# SNAKE WATER GUN GAME
+
+import random
+lst=['s','w','g']
+chance=10
+no_of_chance=0
+human_points =0
+computer_points=0
+print("\t \t \t \t SNAKE, WATER , GUN  GAME  \t \t \t \t")
+print("s for sanke ")
+print("w for water")
+print("g for gun")
+while no_of_chance<chance:
+    inner = input('Snake,Water,Gun:')
+    outer = random.choice(lst)
+
+    if inner == outer:
+        print("Tie both of them will get 0 points")
+
+    elif inner=="s" and outer=="g":
+        computer_points=computer_points+1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("computers wins 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+    elif inner == "s" and outer == "w":
+        human_points = human_points + 1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("human wins 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+    # if user enter g
+
+    elif inner == "g" and outer == "s":
+        computer_points = computer_points + 1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("computers wins 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+    elif inner == "g" and outer == "w":
+        human_points = human_points + 1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("human win 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+    # if user enter a w
+
+    elif inner == "w" and outer == "s":
+        computer_points = computer_points + 1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("computers wins 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+
+    elif inner == "w" and outer == "g":
+        human_points = human_points + 1
+        print(f"your guess {inner} and computer guess {outer}")
+        print("human wins 1 point")
+        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+
+    else:
+        print("you hane given a wrong input \n")
+
+    no_of_chance=no_of_chance+1
+    print(f"{chance - no_of_chance} is left out of {chance} \n")
+
+print("GAME OVER")
+
+if computer_points==human_points:
+    print("matched tied")
+elif computer_points>human_points:
+    print("computer wins and human loose")
+else:
+    print(" human wins and computer loose")
+
+print(f"human point is {human_points}and computer point is {computer_points}")
