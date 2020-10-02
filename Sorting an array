@@ -1,0 +1,19 @@
+from array import *
+
+num = array('i', [])
+l=int(input("Enter the length of the array:"))
+for i in range(l):
+    x=int(input("Enter the value of element in the array:"))
+    num.append(x)
+for i in range(0,l-1):  # we using (l-1) instead of (l) as we are using (i+1) in inner loop so it will give error
+    # index out of bound because inner loop will work on element that not even exist.
+    for j in range(i+1,l):  # we use (i+1) instead of j=0 because it will again check smallest element at i=0 with
+        # new value of i which will disturb the algorithm.
+        temp = 0
+        if num[i] > num[j]:
+            temp = num[j]
+            num[j] = num[i]
+            num[i] = temp
+
+
+print(num)
