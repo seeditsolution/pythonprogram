@@ -1,0 +1,122 @@
+class node:
+    # constructor
+    def __init__(self, info, link=None):
+        self.info = info
+        self.link = link
+    
+class linked_list:
+    
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    
+    def insert_at_beginning(self, info):
+        new_node = node(info)
+        if self.head:
+            new_node.link = self.head
+            self.head = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
+    
+    def insert_at_end(self, info):
+        new_node = node(info)
+        if self.tail:
+            self.tail.link = new_node
+            self.tail = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
+    
+    def insert_at_position(self, info, posi, count=0):
+        if posi <= 1:
+            self.insert_at_beginning(info)
+            return
+        new_node = node(info)
+        temp_head = self.head
+        while temp_head.link:
+            count += 1
+            if posi-1 == count:
+                new_node.link = temp_head.link
+                temp_head.link = new_node
+                return
+            temp_head = temp_head.link
+        # if posi > length of the linked list
+        self.insert_at_end(info)
+    
+    def display(self):
+        if self.head == None:
+            print('linked list is empty...')
+            return
+        temp_head = self.head
+        while temp_head:
+            print(temp_head.info)
+            temp_head = temp_head.link
+
+    def search(self, ele):
+        if self.head == None:
+            print('linked list is empty...')
+            return
+        temp_head = self.head
+        while temp_head:
+            if temp_head.info == ele:
+                print(f'Element {ele} exists in the linked list...')
+                return
+            temp_head = temp_head.link
+        print(f"Element {ele} dosn't exists in the linked list...")
+        
+    def delete_all_nodes_with_ele(self, ele, deletion_flag=False):
+        if self.head == None:
+            print('linked list is empty...')
+            return
+        while self.head.info == ele:
+            self.head = self.head.link
+            deletion_flag = True
+        temp_head = self.head
+        while temp_head.link:
+            if temp_head.link.info == ele:
+                temp_head.link = temp_head.link.link
+                deletion_flag = True
+            temp_head = temp_head.link
+        if deletion_flag == False:
+            print(f"Element {ele} doesn't exists in the linked list...")
+        else:
+            print(f"All occurances of Element {ele} have been deleted from the linked list...")
+    
+    def delete_node_one_time_with_ele(self, ele):
+        if self.head == None:
+            print('linked list is empty...')
+            return
+        while self.head.info == ele:
+            self.head = self.head.link
+            print(f"Element {ele} deleted one time in the linked list...")
+            return
+        temp_head = self.head
+        while temp_head.link:
+            if temp_head.link.info == ele:
+                temp_head.link = temp_head.link.link
+                print(f"Element {ele} deleted one time in the linked list...")
+                return
+            temp_head = temp_head.link
+        print(f"Element {ele} doesn't exists in the linked list...")
+        
+LL = linked_list()
+LL.insert_at_beginning(10)
+LL.insert_at_beginning(10)
+LL.display()
+print('*'*10)
+LL.insert_at_end('sadak')
+LL.insert_at_end(10)
+LL.insert_at_end(-30.786)
+LL.display()
+print('*'*10)
+LL.delete_node_one_time_with_ele(10)
+LL.display()
+print('*'*10)
+LL.delete_all_nodes_with_ele(10)
+LL.display()
+print('*'*10)
+LL.insert_at_position(56746834683648348274824774874, 2)
+LL.display()
+print('*'*10)
+LL.search(30)
