@@ -1,0 +1,47 @@
+Row1=int(input('enter number of row in matrix1:')) 
+Col1=int(input('enter number of Col in matrix1:'))
+Mat1 = []
+for i in range (0,Row1):
+    Mat1.append([])
+for i in range (0,Row1):
+    for j in range (0,Col1):
+        Mat1[i].append(j)
+        Mat1[i][j]=0
+        print('entry in row:',i+1,'column:',j+1)
+        Mat1[i][j]= int (input())
+        
+print ("matrix:",Mat1)   
+
+
+Row2=int(input('enter number of row in matrix2:'))
+Col2=int(input('enter number of Col in matrix2:'))
+Mat2 = []
+for i in range (0,Row2):
+    Mat2.append([])
+for i in range (0,Row2):
+    for j in range (0,Col2):
+        Mat2[i].append(j)
+        Mat2[i][j]=0
+        print('entry in row:',i+1,'column:',j+1)
+        Mat2[i][j]= int (input())
+        
+print ("matrix",Mat2) 
+
+if (Col1 != Row2) :
+    
+    print(" This Matrix Multiplication is Not Possible") 
+    
+else:
+
+    Res = []
+    for i in range (0,Row1):
+        Res.append([])
+    for i in range (0,Row1):
+        for j in range (0,Col2):
+            Res[i].append(j)
+            Res[i][j]=0
+    for Row2 in range(len(Mat1)):
+        for Col2 in range(len(Mat2[0])):
+            for r in range(len(Mat2)):
+                Res[Row2][Col2]=Res[Row2][Col2]+Mat1[Row2][r]*Mat2[r][Col2]
+    print( "Matrix result is :",Res)
