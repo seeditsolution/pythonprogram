@@ -51,4 +51,4 @@ if result != -1:
 
 else: 
 
-    print("Element is not present
+    print("Element is not present")
