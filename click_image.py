@@ -1,5 +1,4 @@
-#https://www.facebook.com/anisha.mamgain.37/posts/1061681344253497
-#Subscribed by Code House
+
 import cv2
 
 cap = cv2.VideoCapture(0)
