@@ -1,0 +1,6 @@
+if condition1:
+    expr1
+elif condition2:
+    expr2
+else:
+    expr
