@@ -1,0 +1,31 @@
+from tkinter import*
+root=Tk()
+root.geometry("700x500")
+root.maxsize(700,500)
+root.minsize(700,500)
+
+// Label
+label=Label(root,bg="red")
+label.pack()
+
+//Button
+
+button=Button(label,font=("verdana 34"),bg="grey",fg="green")
+button.pack(ipadx=5,ipady=2)
+
+button1=Button(label,font=("verdana 34"),bg="blue",fg="red")
+button1.pack(ipadx=5,ipady=2)
+
+button1=Button(label,font=("verdana 34"),bg="black",fg="green")
+button1.pack(ipadx=5,ipady=2)
+
+button1=Button(label,font=("verdana 34"),bg="pink",fg="purple")
+button1.pack(ipadx=5,ipady=2)
+
+button1=Button(label,font=("verdana 34"),bg="red",fg="white")
+button1.pack(ipadx=5,ipady=2)
+
+
+
+
+root.mainloop()
