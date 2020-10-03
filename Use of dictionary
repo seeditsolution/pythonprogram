@@ -1,0 +1,5 @@
+d1={"Shyam":"Honey", "Imli":"Lichi", "Raj":"Mango", "Marie": "Coco"}
+print(d1)
+a=input("Enter the Word:")
+b=a.capitalize()
+print(b,"=",d1[b])
