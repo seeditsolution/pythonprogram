@@ -1,0 +1,6 @@
+a=int(input("enter the no. :"))
+f=1
+while(a>0):
+    f=f*a
+    a-=1
+    print("the factorial of no. :",f)
