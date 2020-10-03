@@ -1,0 +1,8 @@
+# Voting Age Decision
+var=int(input("Enter Your Age:"))
+if 18<var<60:
+    print("You can vote")
+elif var<18:
+    print ("You cannot vote")
+else:
+    print("Contact to office")
