@@ -1,0 +1,183 @@
+from words import words
+import random
+import time
+
+name = input("Enter Your name : ")
+time.sleep(2)
+print()
+print(f"Hello {name}, Welcome to hangman ('.')")
+
+totalattempts = 10
+
+time.sleep(2)
+print("----------------------------------------")
+time.sleep(2)
+print("Following are the rules for this game......")
+time.sleep(2)
+print("---------------------------------------------")
+time.sleep(2)
+print(f"You will be given {totalattempts} Attempts to guess word Correctly.")
+time.sleep(2)
+print("------------------------------------------------------")
+time.sleep(2)
+print()
+print("Are you Ready to play, if You are not interested to play now Press (quit/q) to Close Hangman ('.') ")
+time.sleep(2)
+print("----------------------------------------------------------------------------------------------------")
+print()
+
+userinput = 'y'
+while True:
+    Alreadychoosenletters = []
+    random.shuffle(words)
+    word = originalword = random.choice(words).lower()
+
+    if userinput == 'yes' or userinput == 'y':
+        turns = totalattempts
+        for character in word:
+            if character not in 'aeiou ':
+                word = word.replace(character, "-")
+        print('Guess Word ' +word)
+
+        while(turns >= 1):
+            print()
+            guess = input("Guess Character : ")
+            guess = guess.lower()
+
+            if(guess == 'quit'):
+                exit(0)
+            if guess in originalword:
+                for character in range(0, len(word)):
+                    if originalword[character] == guess:
+                        guessword = list(word)
+                        guessword[character] = guess
+                        word = "".join(guessword)
+            else:
+                if guess in Alreadychoosenletters:
+                    print("This letter already choosen. Try another one.")
+                    continue
+                Alreadychoosenletters.append(guess)
+                turns -= 1
+                print()
+                print("Turn Chance Remains : "+ str(turns))
+            print(word)
+
+            if(turns == 9):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|")
+                print("|")
+                print("|")
+                print("|")
+            if(turns == 8):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|     O     ")
+                print("|")
+                print("|")
+                print("|")
+            if(turns == 7):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|     O     ")
+                print("|     |     ")
+                print("|")
+                print("|")
+            if(turns == 6):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|     O     ")
+                print("|     |     ")
+                print("|    /      ")
+                print("|")
+            if(turns == 5):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|     O     ")
+                print("|     |     ")
+                print("|    / \    ")
+                print("|")
+            if(turns == 4):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|           ")
+                print("|    \O     ")
+                print("|     |     ")
+                print("|    / \    ")
+                print("|")
+            if(turns == 3):
+                print()
+                print("Save You Chances, Another Way, One Day you will die.")
+                print("------------")
+                print("|")
+                print("|    \O/    ")
+                print("|     |     ")
+                print("|    / \    ")
+                print("|")
+            if(turns == 2):
+                print()
+                print("Your Time is near.")
+                print("------------")
+                print("|   |       ")
+                print("|   \_O/    ")
+                print("|     |     ")
+                print("|    / \    ")
+                print("|          ")
+            if(turns == 1):
+                print()
+                print("Your Heart Breathing is too High, Please Save Your Life..... (;';)")
+                print("------------")
+                print("|   |       ")
+                print("|   \_O      ")
+                print("|    /|\     ")
+                print("|    / \     ")
+                print("|")
+
+
+            if(word == originalword):
+                print()
+                print(f"Congratulations {name}, You Won the Hangman ('.')")
+                time.sleep(2)
+                print("Wait..... We have some gift for you :)")
+                time.sleep(4)
+                print()
+                print("   \ \   / /")
+                print("   \ \ | / /")
+                print("     \ | /  ")
+                print("      | |   ")
+                print("       |    ")
+                break
+        if(turns == 0):
+            print()
+            print("Better Luck Next Time!")
+            time.sleep(4)
+            print("------------")
+            print("|   |       ")
+            print("|   \O      ")
+            print("|   /|\     ")
+            print("|   |\      ")
+            print("|")
+            print()
+            print("Correct word is : "+originalword.upper())
+    print()
+    userinput = input("Wanna Play Hangman Again? Press y for yes or press q to quit : ")
+    userinput = userinput.lower()
+    if(userinput != 'yes' and userinput != 'y'):
+        break 
+
+
+
+
+
+
