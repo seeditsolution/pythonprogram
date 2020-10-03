@@ -1,0 +1,17 @@
+A= float(input("Enter first variable,a "))
+B= float(input("Enter second variable,b "))
+ope= input ("Required operation,+, -,/,*, ")
+if ope == '+' :
+    c=A+B
+    print (c)
+elif ope == '-':
+    c=A-B
+    print (c)
+elif ope== '/':
+    c=A/B
+    print (c)
+elif ope=='*':
+    c=A*B
+    print(c)
+else:
+    print ("Done")
