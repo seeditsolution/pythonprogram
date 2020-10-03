@@ -1,0 +1,8 @@
+principle = eval(input("Enter the principle"))
+ROI = eval(input("Enter the ROI"))
+Years = eval(input("Enter the years"))
+print("Principle:-",principle)
+print("ROI:-",ROI)
+print("Years:-",Years)
+SI = principle * ROI * Years/100
+print("The Simple interest of the number",SI)
