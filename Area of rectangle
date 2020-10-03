@@ -1,0 +1,5 @@
+a = int(input("Enter length of side"))
+b = int(input("Enter length of the other side"))
+area = a * b 
+
+print("The area of the triangle is ", area)
