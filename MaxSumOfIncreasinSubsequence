@@ -1,0 +1,16 @@
+ts=int(input())
+l3=[]
+l1=[]
+for j in range (ts):
+ n=int(input())
+ l3.clear()
+ li=list(map(int, input().split()))
+ for i in range(1,n):
+     t=li[i-1]
+     for j in range(0,i):
+      if(li[i]>li[j]):
+        t=t+li[j]
+     l3.append(t)
+ if(len(l3)!=0):  
+  print (max(l3))
+ li.clear()
