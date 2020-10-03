@@ -1,0 +1,9 @@
+var1=18
+var2=int(input("Enter Your Age: "))
+if var2>var1:
+    print("drive")
+elif var2==var1:
+        print("decide")
+
+else:
+    print ("do not drive")
