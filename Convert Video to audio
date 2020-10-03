@@ -1,0 +1,5 @@
+import moviepy.editor as mp     #[at first install moviepy in ur system]
+
+clip = mp.VideoFileClip(r'C:\\Users\\ADMIN\\Desktop\\Despacito.mp4')         #[copy and paste the path where u saved ur video]
+
+clip.audio.write_audiofile('C:\\Users\\ADMIN\\Desktop\\Despacito_cvrt.mp3')  #[give the path where u want to save ur audio file]
