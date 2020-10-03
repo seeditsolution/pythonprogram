@@ -1,0 +1,12 @@
+def vol_sphere(radius):
+    """
+    Calculate Volume of a sphere
+    Arguement:
+    Radius: Positive int or float number
+    """
+    pi = 3.14   
+    volume = round((4 / 3) * pi * (radius ** 3),2)
+    print(f'Volume of a sphere with radius {radius} is {volume}')
+
+# Example
+vol_sphere(7)   
