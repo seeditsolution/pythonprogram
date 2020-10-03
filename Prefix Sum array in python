@@ -1,0 +1,16 @@
+# Python program to print prefix
+#sum array using accumulate function 
+from itertools import accumulate 
+  
+def summation(A): 
+   print ("The List after Summation ::>", list(accumulate(A))) 
+  
+# Driver program 
+if __name__ == "__main__": 
+   A=list()
+n=int(input("Enter the size of the First List ::"))
+print("Enter the Element of First  List ::")
+for i in range(int(n)):
+   k=int(input(""))
+   A.append(k)
+summation(A) 
