@@ -1,0 +1,44 @@
+def is_leap_year(year):
+    return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
+
+def numberOfDaysInAYear(year) :
+     if year == 2010 and output.is_leap_year = True: 
+        print (365)
+     elif year==2011 :
+        print(365)  
+     elif year==2012 :
+        print (366)
+     elif year==2013 :
+        print(365) 
+     elif year==2014 :
+       print(365) 
+     elif year==2015 :
+       print(365)   
+     elif year==2016 :
+        print (366)
+     elif year==2017 :
+        print(365) 
+     elif year==2018 :
+       print(365) 
+     elif year==2019 :
+       print(365) 
+     elif year == 2020 :
+        print (366)   
+
+     else: print('')        
+
+
+
+ print ( year == 2010 ,"Days are 365")
+   print ( year == 2011 ,"Days are 365")
+   print ( year == 2012 ,"Days are 366")
+   print ( year == 2013 ,"Days are 365")
+   print ( year == 2014 ,"Days are 365")
+   print ( year == 2015 ,"Days are 365")
+   print ( year == 2016 ,"Days are 366")
+   print ( year == 2017 ,"Days are 365")
+   print ( year == 2018 ,"Days are 365")
+   print ( year == 2019 ,"Days are 365")
+   print ( year == 2020 ,"Days are 366")
+      
+  
