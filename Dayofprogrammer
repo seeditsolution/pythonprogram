@@ -1,0 +1,47 @@
+#!/bin/python
+import sys
+y = int(raw_input().strip())
+# your code goes here
+months = {0:31,1:28,2:31,3:30,4:31,5:30,6:31,7:31,8:30,9:31,10:30,11:31}
+if y <= 1917:
+    tot = 0
+    for i in range(12):
+        if tot + months[i] > 256:
+            break
+        if y % 4 == 0 and i == 1:
+            tot = tot + 29
+        else:
+            tot = tot + months[i]
+    ans = ""
+    day = 256 - tot
+    month = i + 1
+    ans = ans + str(day) + ".0" + str(month) + "." + str(y)
+    print ans
+elif y == 1918:
+    tot = 0
+    for i in range(12):
+        if tot + months[i] > 256:
+            break
+        if i == 1:
+            tot = tot + 15
+        else:
+            tot = tot + months[i]
+    ans = ""
+    day = 256 - tot
+    month = i + 1
+    ans = ans + str(day) + ".0" + str(month) + "." + str(y)
+    print ans
+else:
+    tot = 0
+    for i in range(12):
+        if tot + months[i] > 256:
+            break
+        if (y % 400 == 0 or (y % 4 == 0 and y % 100 != 0)) and i == 1:
+            tot = tot + 29
+        else:
+            tot = tot + months[i]
+    ans = ""
+    day = 256 - tot
+    month = i + 1
+    ans = ans + str(day) + ".0" + str(month) + "." + str(y)
+    print ans
