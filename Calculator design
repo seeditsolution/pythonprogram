@@ -1,0 +1,20 @@
+print("Enter 1st number")
+var1=int(input())
+print("Enter 2nd number")
+var2=int(input())
+print ("Give your option +,-,*,/")
+var3=input()
+if var3=='*':
+    var4=var1*var2
+    print(var4)
+elif var3=='+':
+    var4=var1+var2
+    print(var4)
+elif var3=='-':
+    var4=var1-var2
+    print(var4)
+elif var3=='/':
+    var4=var1/var2
+    print(var4)
+else:
+    stop
