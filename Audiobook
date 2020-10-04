@@ -1,0 +1,12 @@
+import pyttsx3     // install pyttsx3 package in your IDE
+import PyPDF2      // install PyPDF2  package in your IDE
+book = open('oop.pdf','rb')            // here you give filename of pdf
+pdfPeader = PyPDF2.PdfFileReader(book)
+pages = pdfReader.numPages
+print(pages)         // print the number of pages in pdf
+speaker = pyttsx3.init()
+for num in range(7,pages):
+page = pdfReader.getpage(7)
+text = page.extractText()
+speaker.say(text)
+speaker.runAndwait()
