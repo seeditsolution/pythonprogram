@@ -1,0 +1,5 @@
+#here we find the area of a rectangle
+l=int(input("enter the length of rectangle:"))
+b=int(input("enter the breath of rectangle:"))
+area=l*b
+print(f"area of rectangle is:{area}")
