@@ -1,0 +1,2 @@
+from playsound import playsound
+playsound('D:\\Car Aminated\\sound.mp3')
