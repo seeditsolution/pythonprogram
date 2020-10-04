@@ -1,0 +1,3 @@
+listpy = ['bat','rat','cat','dog'];
+for in range(4):
+  print('Index : '+ str(i)+ 'in the list is : '+ listpy[i])
