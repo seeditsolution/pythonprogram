@@ -1,76 +1,35 @@
-# SNAKE WATER GUN GAME
-
 import random
-lst=['s','w','g']
-chance=10
-no_of_chance=0
-human_points =0
-computer_points=0
-print("\t \t \t \t SNAKE, WATER , GUN  GAME  \t \t \t \t")
-print("s for sanke ")
-print("w for water")
-print("g for gun")
-while no_of_chance<chance:
-    inner = input('Snake,Water,Gun:')
-    outer = random.choice(lst)
 
-    if inner == outer:
-        print("Tie both of them will get 0 points")
+lst = ["Snake", "Water", "Gun"]
 
-    elif inner=="s" and outer=="g":
-        computer_points=computer_points+1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("computers wins 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+n=10
+count=0
 
-    elif inner == "s" and outer == "w":
-        human_points = human_points + 1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("human wins 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+for i in range(1,11):
+        s = random.choice(lst)
+        n1 = input("Enter S:For Snake,Enter W:For Water,Enter G:For Gun,Press any other key to exit:\n")
 
-    # if user enter g
+        if n1 == "S" or n1 == "s":
+            n1 = "Snake"
+        elif n1 == "W" or n1 == "w":
+            n1 = "Water"
+        elif n1 == "G" or n1 == "g":
+            n1 = "Gun"
+        else:
+            n1 = "invalid"
+            break
+        if n1 == s:
+            print("Your Choice:"+n1+" Computer Choice:"+s+" Draw!!")
+        elif (n1 == "Snake" and s == "Water" ) or (n1 == "Water" and s == "Gun") or (n1 == "Gun" and s == "Snake"):
+            print("Your Choice:"+n1+" Computer Choice:"+s+" User Win!!")
+            count += 1
+        else:
+            print("Your Choice:" + n1 + " Computer Choice:" + s + " Computer wins!!")
 
-    elif inner == "g" and outer == "s":
-        computer_points = computer_points + 1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("computers wins 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
-
-    elif inner == "g" and outer == "w":
-        human_points = human_points + 1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("human win 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
-
-    # if user enter a w
-
-    elif inner == "w" and outer == "s":
-        computer_points = computer_points + 1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("computers wins 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
+        print("The no. of chances left:",10-i)
 
 
-    elif inner == "w" and outer == "g":
-        human_points = human_points + 1
-        print(f"your guess {inner} and computer guess {outer}")
-        print("human wins 1 point")
-        print(f"computer_points is {computer_points} and your point is {human_points}\n")
-
-    else:
-        print("you hane given a wrong input \n")
-
-    no_of_chance=no_of_chance+1
-    print(f"{chance - no_of_chance} is left out of {chance} \n")
-
-print("GAME OVER")
-
-if computer_points==human_points:
-    print("matched tied")
-elif computer_points>human_points:
-    print("computer wins and human loose")
+if count >= 5:
+    print("You Win!!!  Points: User:",count," Computer:",9-count)
 else:
-    print(" human wins and computer loose")
-
-print(f"human point is {human_points}and computer point is {computer_points}")
+    print("Computer Wins!!! Points: User:",count," Computer:",9-count)
