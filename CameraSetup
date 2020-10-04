@@ -1,0 +1,15 @@
+import cv2
+
+capture=cv2.VideoCapture(0)
+
+while True:
+    ret,frame=capture.read()
+    cv2.imshow("output",frame)
+    
+    if cv2.waitKey(1) & 0xff==ord('q'):    #ord('q') is the range to close the loop
+        break
+        
+capture.release()
+cv2.destroyAllWindows()
+
+#coloured video capture
