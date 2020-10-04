@@ -1,0 +1,21 @@
+a = int(input('Enter 1st num:'))
+b = int(input('Enter 2nd num:'))
+c = int(input('Enter 3rd num:'))
+d = int(input('Enter 4th num:'))
+
+#variable g1 and g2 to store the greater num while comparision
+
+if a>b | c>d:
+	g1 = a
+	g2 = c	
+	if g1>g2:
+		print("Greatest is:",g1)
+	else:
+		print("Greatest is:",g2)
+else:
+	g1 = b
+	g2 = d
+	if g1>g2:
+		print("Greatest is:",g1)
+	else:
+		print("Greatest is:",g2)
