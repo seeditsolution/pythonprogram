@@ -1,0 +1,33 @@
+#To make a calculator
+import math
+import numpy as np
+
+def add(*args):
+return sum(args)
+
+def sub(a,b):
+return np.subtract(a,b)
+
+def mul(*args):
+return np.prod(args)
+
+def div(a,b):
+return np.divide(a,b)
+
+def calculator():
+Welcome_User = input("Hit Enter to continue")
+num1 = int(input("Enter the First Number"))
+num2 = int(input("Enter the Second Number"))
+x = input("What do you want to do{+, -, , or /}")
+if x=="+":
+print("Your required answer is" , add(num1, num2))
+elif x=="-":
+print("Your required answer is" , sub(num1, num2))
+elif x=="":
+print("Your required answer is" , mul(num1, num2))
+elif x=="/":
+print("Your required answer is" , div(num1, num2))
+else:
+print("Sorry, Try Again!!")
+
+calculator()
