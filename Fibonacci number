@@ -1,4 +1,4 @@
-
+# please accept by user input
 import math 
 def isPerfectSquare(x): 
 	s = int(math.sqrt(x)) 
