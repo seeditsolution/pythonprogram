@@ -1,6 +1,14 @@
+#Simple Python Guessing Number Game
+
+#select variable n value as per your choice
 n=20
+
+#Intialize these to 1
 number_of_guesses=1
+
 print("Number of guesses is limited to 9 times: ")
+
+#While Loop that checks input value and print result
 while (number_of_guesses<=9):
     guess_number=int(input("Guess the no :\n"))
     if guess_number<20:
@@ -14,4 +22,4 @@ while (number_of_guesses<=9):
     print(9-number_of_guesses, "number of guesses left")
     number_of_guesses = number_of_guesses + 1
 if(number_of_guesses>9):
-    print("Game Over")
+    print("Game Over"
