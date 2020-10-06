@@ -1,0 +1,7 @@
+a_list = [0, 0, 0]
+integers_to_add = [1, 2, 3]
+
+for index, integer in enumerate(integers_to_add):
+    a_list[index] += integer
+
+print(a_list)
