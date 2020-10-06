@@ -1,0 +1,46 @@
+# Python3 implementation of the approach 
+
+# Function to return the sorted string 
+def getSortedString(s, n): 
+
+	# Vectors to store the lowercase 
+	# and uppercase characters 
+	v1=[] 
+	v2=[] 
+	for i in range(n): 
+		if (s[i] >= 'a' and s[i] <= 'z'): 
+			v1.append(s[i]) 
+		if (s[i] >= 'A' and s[i] <= 'Z'): 
+			v2.append(s[i]) 
+
+	# Sort both the vectors 
+	v1=sorted(v1) 
+	v2=sorted(v2) 
+	i = 0
+	j = 0
+	for k in range(n): 
+
+		# If current character is lowercase 
+		# then pick the lowercase character 
+		# from the sorted list 
+		if (s[k] >= 'a' and s[k] <= 'z'): 
+			s[k] = v1[i] 
+			i+=1
+
+		# Else pick the uppercase character 
+		elif (s[k] >= 'A' and s[k] <= 'Z'): 
+			s[k] = v2[j] 
+			j+=1
+
+	# Return the sorted string 
+	return "".join(s) 
+
+
+# Driver code 
+s = "gEeksfOrgEEkS"
+ss=[i for i in s] 
+n = len(ss) 
+
+print(getSortedString(ss, n)) 
+
+# This code is contributed by Kunal Gupta
