@@ -1,0 +1,12 @@
+c=0
+m=0
+l = ['Raju', 'Shyam', 'Babu', 'Rao']
+for i in l:
+    for j in i:
+        if j=="a" or j=='e' or j=='i'or j=='o' or j=='u' or j=="A" or j=='E' or j=='I' or j=='O' or j=='U':
+            print(j, "is a vowels")
+            c=c+1
+            print("its ASCII values is", ord(j))
+            m=m+(ord(j))
+    print()
+print("Total ASCII value of vowels are : ", m)
