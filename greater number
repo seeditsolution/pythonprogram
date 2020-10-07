@@ -1,0 +1,8 @@
+num = 32
+user = int(input('Enter a number '))
+if user == 32:
+    print('congrats !!! you win')
+elif user > 32:
+    print('to high')
+elif user < 32:
+    print('too low')
