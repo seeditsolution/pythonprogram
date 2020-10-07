@@ -1,0 +1,5 @@
+
+import socket as s
+print("Please Enter website url")
+hostid = input()
+print(f'IP of {hostid} is {s.gethostbyname(hostid)}')
