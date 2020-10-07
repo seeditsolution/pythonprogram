@@ -1,0 +1,13 @@
+def r(n):
+    a = [2,3,4,1,5]
+    l = []
+    if n >=len(a):
+        return False
+    else:
+        for i in range(len(a)):
+            l.append(a[n])
+            l+= a[n+1:]
+            l += a[:n]
+            break
+    return l
+print(r(1))
