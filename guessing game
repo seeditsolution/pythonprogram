@@ -1,0 +1,17 @@
+import random
+n = random.randint(1,100)
+number = int(input("Guess a number between 1 and 100 : "))
+game_over = False
+count_times = 1
+while not game_over:
+    if number == n:
+        print("\U0001F603 you win \U0001F603")
+        print(f"you Guess in {count_times} Times")
+        game_over = True
+    else:
+        if number > n:
+            print("too high")
+        else:
+            print("too low")
+        count_times += 1
+        number = int(input("guess again : "))
