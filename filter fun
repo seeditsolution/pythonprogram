@@ -1,0 +1,2 @@
+l = ['shaleem','yaqoob','bhatti','yuab shaleem']
+print(list(filter(lambda s : len(s)==6,l)))
