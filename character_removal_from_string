@@ -1,0 +1,9 @@
+
+
+a=input("enter string ")                #  enter the string                                      : eg apple 
+
+b=input("enter character ")             # enter the character to be removed                      : eg a
+
+for i in range (len(a)):
+    if b != a[i]:
+        print(a[i],end=" ")             # output                                                 : p p l e
