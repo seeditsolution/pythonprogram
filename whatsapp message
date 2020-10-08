@@ -1,0 +1,3 @@
+import pywhatkit as kit
+
+kit.sendwhatmsg("+919*********", "heyy this is mitesh kateliya..!", 18, 21)
