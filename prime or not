@@ -1,0 +1,8 @@
+Input:  n = 11
+Output: true
+
+Input:  n = 15
+Output: false
+
+Input:  n = 1
+Output: false
