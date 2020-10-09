@@ -1,0 +1,9 @@
+import turtle
+turtle.showturtle()
+turtle.shape("turtle")
+turtle.bgpic('maze1.png')
+turtle.penup()
+turtle.goto(-70, 210)
+turtle.pendown()
+turtle.pencolor("red")
+input()
