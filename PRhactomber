@@ -1,0 +1,6 @@
+Import pypdf2
+
+Tables= pypdf2.readpdf("hello.pdf")
+Print tables[0]
+
+
