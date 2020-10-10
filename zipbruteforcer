@@ -1,0 +1,21 @@
+from tqdm import tqdm
+import zipfile
+
+wordlist_path = input("Enter the path of wordlist: ")
+zip_path = input("Enter the path of zipfile: ")
+
+zip_file = zipfile_ZipFile(zip_path)
+n_word = len(list(open(wordlist_path."rb")))
+
+print("Total words to be test: ",n_words)
+
+with open(word_path,"rb") as wordlist:
+  for word in tqdm(wordlist,total=n_words,unit="word"):
+    try:
+      zip_file.extractall(pwd=word.strip())
+    except:
+      continue
+    else:
+      print("[+] Password found:",word.decode().strip())
+      exit(0)
+print("Password not found")
