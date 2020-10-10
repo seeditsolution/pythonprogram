@@ -1,0 +1,15 @@
+#iterative approach
+def findMinSum(num):
+   sum_ = 0
+   # Find factors of number and add to the sum
+   i = 2
+   while(i * i <= num):
+      while(num % i == 0):
+         sum_ += i
+         num /= i
+      i += 1
+   sum_ += num
+   return sum_
+# Driver Code
+num = 12
+print (findMinSum(num))
