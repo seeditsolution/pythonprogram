@@ -1,0 +1,199 @@
+from random import choice
+
+
+def feedback(blackPegs, whitePegs):
+    feedback1 = str(blackPegs) + " BLACK PEGS"
+    feedback2 = str(whitePegs) + " WHITE PEGS"
+
+    if blackPegs == 1:
+        feedback1 = feedback1[:-1]
+
+    if whitePegs == 1:
+        feedback2 = feedback2[:-1]
+
+    # This is to take out the "S" if the number of white pegs or black pegs is singular
+
+    feedback = feedback1 + " — " + feedback2 + "\n"
+    return print(feedback)
+
+
+print("Guess The Code Game")
+print("-------------------\n")
+
+print("INSTRUCTIONS:")
+print("Colour scheme: green, red, yellow, blue, orange, purple.")
+print("I'm thinking of a 4 colour code. Try and guess what it is!")
+print("Note: duplicates are allowed.")
+print("Input your guess like this: 'RRYB'.")
+print("You will then be awarded one or more black or white pegs.")
+print("A black peg means right colour, right position.")
+print("A white peg means right colour, wrong position.")
+print("You have 7 guesses. Good luck!")
+
+colours = ["G", "R", "Y", "B", "O", "P"]
+
+play = "Y"
+while play == "Y":
+    # This sets up the program so that later on the player has the option to play again
+
+    print()
+
+    code = []
+    for i in range(4):
+        code.append(choice(colours))
+        # This randomly selects the code from the colours array
+
+    # print(code)
+
+    win = False
+    for g in range(7):  # You only get 7 guesses
+
+        validated = False
+        while validated == False:
+            validated = True
+            # You assume the user input is valid until you find out otherwise                    
+            guess = input("INPUT guess: ").upper()
+            if len(guess) != len(code):
+                print("You have to type in 4 colours.")
+                validated = False
+            else:
+                for i in range(4):
+                    if guess[i] not in colours:
+                        print("Unexpected character. Please try again.")
+                        validated = False
+                        break
+
+        guess = list(guess)
+
+        blackPegs = 0
+        whitePegs = 0
+        for i in range(4):
+            if guess[i] == code[i]:
+                blackPegs += 1
+                guess[i] += "PEG!"
+                code[i] += "PEG!"
+
+        for i in range(4):
+            if guess[i] in code and guess[i] != code[i]:
+                whitePegs += 1
+                code[code.index(guess[i])] += "PEG!"
+
+        for i in range(4):
+            if len(code[i]) > 1:
+                code[i] = (code[i])[0]
+
+        '''
+Lines 66-81
+This part of the program might seem unneccesarily complicated, but it is to make up for some of the
+subtleties in the rules in how you award the black or white pegs.
+
+"If there are duplicate colours in the guess, they cannot all be awarded a key peg unless they
+correspond to the same number of duplicate colours in the hidden code." - Wikipedia
+
+E.g.(1)
+for i in range(4):
+    if guess[i] == code[i]:
+        blackPegs += 1
+    elif guess[i] in code:
+        # The elif statement means guess[i] != code[i]
+        whitePegs += 1
+
+Why it doesn't work:
+If the code was "PPYP" and your guess was "OYYO",
+you would be awarded 1 white peg and 1 black peg
+as the first 'Y' in the guess is in the code but
+not directly corresponding. However, there is 1
+too many 'Y' in the guess and therefore there
+should be 1 black peg and 0 white pegs instead.
+
+E.g.(2)
+for i in range(4):
+    if guess[i] == code[i]:
+        blackPegs += 1
+        code[i] += "PEG!"
+
+for i in range(4):
+    if guess[i] in code and guess[i] != code[i]:
+        whitePegs += 1
+        code[code.index(guess[i])] += "PEG!"
+        # This finds the 1st place in the code where
+        # the colour in the guess is
+
+for i in range(4):
+    if len(code[i]) > 1:
+        code[i] = (code[i])[0]
+        # This resets the code back to what it was
+
+Improvements:
+This time, the number of black pegs is determined
+first because otherwise a white peg could be given
+too early when a black peg should have
+been given instead (see Example 1).
+
+Also, the issue of double counting has been
+partially avoided. E.g. if the code was "ROOO"
+and your guess was "GRRR" then only 1 white peg
+would be awarded (rather than 3) because the 
+code array would become ["RPEG!", "O", "O", "O"]
+after 1 white peg.
+
+Why it stil doesn't work:
+*sigh* Unfortunately, this still doesn't work. For
+example, if the code was "BBGG" and your guess was
+"OBOO" then you would be given 1 black peg and 1
+white peg, but a single coloured peg can't count
+towards a black peg and a white peg.
+
+E.g.(2) solves the problem of a coloured peg in the
+code resulting in more than 1 black/white peg, but it
+doesn't solve the problem of a coloured peg in the
+guess resulting in more than 1 black/white peg.
+
+My solution:
+blackPegs = 0
+whitePegs = 0
+for i in range(4):
+    if guess[i] == code[i]:
+        blackPegs += 1
+        guess[i] += "PEG!"
+        code[i] += "PEG!"
+
+for i in range(4):
+    if guess[i] in code and guess[i] != code[i]:
+        whitePegs += 1
+        code[code.index(guess[i])] += "PEG!"
+
+for i in range(4):
+    if len(code[i]) > 1:
+        code[i] = (code[i])[0]
+
+Improvements:
+I have incorporated all the improvements of E.g.(2),
+but now if a coloured peg from the guess has counted
+towards a black peg, it cannot also be counted
+towards a white peg (this is as a result of guess[i]
++= "PEG", meaning that when it goes through the second
+for loop guess[i] is not in code).In the second for
+loop, it is unneccessary to write guess[i] += "PEG!" as
+it cannot be double counted anyway as that is the last
+time it will be counted towards a white peg or a black
+peg.
+        '''
+
+        if blackPegs == 4:
+            win = True
+            break
+        else:
+            if g < 6:
+                feedback(blackPegs, whitePegs)
+
+    if win == True:
+        print("You win! The code is " + "".join(code) + ".")
+
+    else:
+        print("Sorry — the code was " + "".join(code) + ". You lose.")
+
+    print()
+    play = input("Play again? (Y/N) ").upper()
+    while play != "Y" and play != "N":
+        print("Please respond with the letter 'Y' or 'N' only.")
