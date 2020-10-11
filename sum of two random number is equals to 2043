@@ -1,0 +1,67 @@
+#in this  program  the  first element of list(a)  and  first element of list(a1)  sum is equals to 2043  
+#the  second element of list(a)  and  second element of list(a1)  sum is equals to 2043  likes  this  the sum  of  respective elemets is 2043 
+
+
+from random import randint
+#from time import sleep
+
+a=[]
+a1= []
+while True :
+	l = []
+					
+	for i in range(0,9):
+		r=randint(60,2043)
+			
+		l.append(r)
+
+	l1 = []
+					
+	for i in range(0,9):
+		r=randint(60,2043)
+			
+		l1.append(r)
+
+	for i in range(0,len(l)):
+		print("LIST ONE :::",l[i])
+		
+		print("LIST TWO:::",l1[i])
+		
+		print()
+		print()
+		
+		x = l[i] + l1[i]	
+		print(x,"guru")
+			
+
+	print(l)	
+	print(l1)
+
+	print("addddddd")
+
+	for k in range(0,9):
+		
+		y= l[k] + l1[k]
+		print(y)
+		
+		if y == 2043 :
+			print("zone")
+			
+			a.append(l[k])
+			a1.append(l1[k])	
+						
+			print(a)
+			print(a1)
+			print(len(a))
+			print(len(a1))
+
+		else :
+			print("try")	
+
+	if  len(a) == 9 :
+		
+		print("ELEMENTS OF ONE LIST:::",a)
+		print("ELEMENTS OF SECOND LIST:::",a1)
+		
+		break
+
