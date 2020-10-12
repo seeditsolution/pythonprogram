@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    tools:context="com.example.azim.mygalleryapp.MainActivity">
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="My Image Gallery"/>
+    <Gallery
+
+        android:id="@+id/mygallery"
+
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginTop="25dp"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"/>
+    <ImageView
+
+        android:id="@+id/myimage"
+
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginTop="25dp"
+
+        android:layout_width="330dp"
+
+        android:layout_height="250dp"
+
+        android:scaleType="fitXY" />
+</LinearLayout>
