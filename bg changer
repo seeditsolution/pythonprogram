@@ -1,0 +1,3 @@
+cloudinary.uploader.upload("baseball.jpg",
+  public_id = "baseball_no_bg",
+  background_removal = "cloudinary_ai",
