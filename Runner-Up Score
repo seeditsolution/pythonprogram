@@ -1,0 +1,12 @@
+#input format=
+#5
+#6 5 5 2 3
+
+
+if __name__ == '__main__':
+    n = int(input())
+    ip_arr = list(map(int, input().split()))
+    a=max(ip_arr)
+    while max(ip_arr) == a:
+        arr.remove(max(ip_arr))
+    print(max(ip_arr))
