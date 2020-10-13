@@ -1,0 +1,13 @@
+import time
+def convert_time(sec):
+  min = sec // 60
+  sec = sec % 60
+  hrs = min // 60
+  min = min % 60
+  print("Lapsed Time = {0}:{1}:{2}".format(int(hrs),int(min),sec))
+input("Press Enter to start")
+start_time = time.time()
+input("Press Enter to stop")
+end_time = time.time()
+lapsed_time = end_time - start_time
+convert_time(lapsed_time)
