@@ -1,0 +1,8 @@
+def compare(a,b):
+    s = ""
+    for x in a:
+        for y in b:
+            if x == y:
+                s+=str(x)
+            else:
+                s+=str(y)
