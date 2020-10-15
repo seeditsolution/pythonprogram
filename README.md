@@ -1,8 +1,8 @@
 # pythonprogram
 
 
-it is a new python program
-its help for beginners
+It is a new python program
+It's help for beginners
 #python
 #beginners
 #code
