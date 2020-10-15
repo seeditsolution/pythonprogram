@@ -1,0 +1,6 @@
+import random
+
+x = random.randint(1, 30)
+
+print("this will print random numbers from 1 to 30")
+print(x)
