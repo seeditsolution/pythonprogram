@@ -1,0 +1,10 @@
+print("Hello world")
+
+print("hi user\n here i am going to convert your weight from kilograms(kg) to pounds(lbs)")
+
+x = int(input("your weight in kgs: "))
+y = x * 2.205
+
+print("u r ",y ," pounds(lbs)"  )
+print("i am only 14 so can u pls accept my pull request")
+print("i created this onmy own and not copy pasted")
