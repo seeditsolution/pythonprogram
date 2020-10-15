@@ -1,0 +1,148 @@
+import os
+os.add_dll_directory("F:\movie")
+import speech_recognition as sr
+from google import google
+import pyttsx3
+answers = {
+    'name': 'You should already know that, because you called me just now',
+    'yourself':'i am a virtual friend designed by ekansh jain ',
+    'marry':'sorry  i am a virtual assistant',
+    'love':'i love someone else',
+    'hate':'Imao look at your face',
+    'children':'oh please',
+    'chat':'oh please i ignore you do not understand that',
+    'manu':'manu is a idiot person in this world take some distance from her its is better than you and me',
+    'wit':'it is better than we do not talk on this topic',
+    'google':'Google, LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware',
+    'corona':'''COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.
+Most common symptoms:
+fever
+dry cough
+tiredness
+Less common symptoms:
+aches and pains
+sore throat
+diarrhoea
+conjunctivitis
+headache
+loss of taste or smell
+a rash on skin, or discolouration of fingers or toes
+Serious symptoms:
+difficulty breathing or shortness of breath
+chest pain or pressure
+loss of speech or movement
+Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility.
+People with mild symptoms who are otherwise healthy should manage their symptoms at home.
+On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.''',
+'shubh':'Ab ish chutiye ke bare me puch rhe ho toh suno itna dushro ki fikar krta he ki tujhe pta he yeh hua tujhe pta he voh hua etc etc',
+'bye':'Do not disturb me again bye!'
+
+
+}
+r=sr.Recognizer()
+r1=sr.Recognizer()
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+
+
+engine.setProperty('voice', voices[1].id)
+
+
+
+def SpeakText(command):
+    engine=pyttsx3.init()
+    engine.say(command)
+    engine.runAndWait()
+
+def solutionFinder(incomingText):
+    answer=''
+    
+    if 'your name' in incomingText:
+            answer = answers['name']
+        
+    elif 'yourself' in incomingText:
+            answer = answers['yourself']
+
+    elif 'marry' in incomingText:
+            answer = answers['marry']
+
+    elif 'love' in incomingText:
+            answer = answers['love']
+
+    elif 'hate' in incomingText:
+            answer = answers['hate']
+        
+    elif 'children' in incomingText:
+            answer = answers['children']
+        
+    elif 'chat' in incomingText:
+            answer = answers['chat']
+        
+        
+    elif 'manu' in incomingText:
+            answer = answers['manu']
+        
+        
+        
+    elif 'w i t' in incomingText:
+            answer = answers['wit']
+
+        
+        
+    elif 'google' in incomingText:
+            answer = answers['google']
+
+        
+        
+    elif 'corona' in incomingText:
+            answer= answers['corona']
+        
+        
+    elif 'shubh' in incomingText:
+            answer= answers['shubh']
+        
+        
+    elif 'bye' in incomingText:
+            answer= answers['bye']
+        
+        
+        
+    SpeakText(answer)
+
+
+while(1):
+    try:
+
+        with sr.Microphone() as source2:
+            r.adjust_for_ambient_noise(source2,duration=0.2) 
+
+            print("Call me alex") 
+            audio2 = r.listen(source2,phrase_time_limit=4)
+
+            MyText =''
+            MyText = r.recognize_google(audio2)
+            MyText = MyText.lower()
+            print(MyText)
+
+            if 'alex' in MyText:
+                SpeakText('tell me')
+                r1.adjust_for_ambient_noise(source2,duration=0.2)
+                print('Listening.....')
+                audio3 = r1.listen(source2,phrase_time_limit=4)
+
+                MyNewText = ''
+                MyNewText = r1.recognize_google(audio3)
+                MyNewText = MyNewText.lower()
+                print("you said " + MyNewText)
+                solutionFinder(MyNewText)
+
+    except sr.RequestError as e:
+        print("could not request results : {0}".format(e))
+
+    except sr.UnknownValueError:
+        pass
+
+    except sr.WaitTimeoutError:
+        pass
+
