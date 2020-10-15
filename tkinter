@@ -1,0 +1,15 @@
+from tkinter import *
+root=Tk()
+
+root.geometry("400x400")
+root.minsize(200,200)
+# root.maxsize(450,450)
+vk=Label(text="please enter the frist number ")
+vk.pack()
+
+
+
+
+
+
+root.mainloop()
