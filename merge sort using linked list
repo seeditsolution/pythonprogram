@@ -1,0 +1,51 @@
+def sortList(self, head):
+    """
+    :type head: ListNode
+    :rtype: ListNode
+    """
+
+    if head.next:
+
+        # find mid point
+
+        mid = fast = head
+        while fast.next and fast.next.next:
+            mid = mid.next
+            fast = fast.next.next
+
+        # split linkedList into two
+
+        l1 = head
+        l2 = mid.next
+        mid.next = None
+
+        # recursively call mergeSort to Left and Right Lists
+
+        L=self.sortList(l1)
+        L=self.sortList(l2)
+
+        # pointers for merging
+
+        newPtr = newHead = ListNode(-1)
+        while L and R:
+            if L.val < R.val:
+                newPtr.next = L
+                L = L.next
+            else:
+                newPtr.next = R
+                R = R.next
+            newPtr = newPtr.next
+        # for remaining nodes
+        while L:
+            newPtr.next = L
+            newPtr = newPtr.next
+            L = L.next
+        while R:
+            newPtr.next = R
+            newPtr = newPtr.next
+            R = R.next
+
+        return newHead.next
+
+    else:
+        return head
