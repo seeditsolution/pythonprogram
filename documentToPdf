@@ -1,0 +1,14 @@
+import tkinter as tk
+from tkinter import filedialog
+#Dayal Nigam
+root = tk.Tk()
+root.title("CONVERTOR")
+
+def instructions():
+	filename = filedialog.askopenfilename(initialdir = "/",title="Select File",
+		filetypes = (("Word Files","*.docx"),("All files","*.*")))
+	print(filename)
+
+label(root,text = "Select the file to convert").grid(row =0,column=0) 
+Button(root,text = "CONVERT",command = instructions).grid(row =0,column=1)
+root.mainloop()
