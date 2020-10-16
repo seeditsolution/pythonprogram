@@ -1,0 +1,15 @@
+import pyttsx3
+import os
+
+pyttsx3.speak(" hi.... press proper nunber to launch your app")
+
+apps = {
+	"1" : "chrome",
+	"2" : "notepad",
+	"3" : "start wmplayer"
+}
+print(apps)
+
+p = input("Enter your number to open your app: ")
+
+os.system(apps[p])
