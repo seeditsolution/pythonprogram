@@ -1,0 +1,30 @@
+
+def binary_search(a, x):
+    if x>a[-1]:
+        return -1
+    left, right = 0,n
+    while(left<=right):
+        mid=(left+right)//2
+        if a[mid]==x:
+            return mid
+        elif a[mid]>x:
+            left,right=left,mid-1
+        else :
+            left,right=mid+1,right
+    return -1     
+
+# def linear_search(a, x):
+#     for i in range(len(a)):
+#         if a[i] == x:
+#             return i
+#     return -1
+
+data=list(map(int,input().split()))
+n=data[0]
+a=(data[1:])
+data1=list(map(int,input().split()))
+for x in data1[1:]:
+    
+    # replace with the call to binary_search when implemented
+
+    print(binary_search(a, x), end = ' ')
