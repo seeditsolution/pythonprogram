@@ -1,0 +1,9 @@
+class car:  # class is declared 
+    def __init__(self,modelname, year):  # __init__() method, Its optional
+        self.modelname = modelname  
+        self.year = year  
+    def display(self):  
+        print(self.modelname,self.year)  
+  
+c1 = car("Toyota", 2016)  # creating object
+c1.display()  # calling display() method
