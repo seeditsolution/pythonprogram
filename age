@@ -1,0 +1,5 @@
+import datetime
+year=datetime.datetime.now().year
+year_of_birth=int(input("Enter birth year"))
+age=year-year_of_birth
+print("The age is ",age)
