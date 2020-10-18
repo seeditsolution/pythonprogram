@@ -1,0 +1,8 @@
+arr = [5, 8, 3, 4, 5, 7, 8, 9, 12, 7, 8, 3];     
+     
+print("Duplicate elements in given array: ");    
+    
+for i in range(0, len(arr)):    
+    for j in range(i+1, len(arr)):    
+        if(arr[i] == arr[j]):    
+            print(arr[j]);  
