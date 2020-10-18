@@ -1,0 +1,10 @@
+#Python Program to find the greatest among 3 number
+a=int(input("Enter the 1st No:-"))
+b=int(input("Enter the 2nd No:-"))
+c=int(input("Enter the 1st No:-"))
+if(a>b) and(a>c):
+  print(a,"is greater")
+elif(b>=a)and(b>=c):
+  print(b,"is greater")
+else:
+  print(c,"is greater")
