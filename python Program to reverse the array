@@ -1,0 +1,25 @@
+# First method
+# Using list slicing to reverse an array in python
+#The original array
+arr = [11, 22, 33, 44, 55]
+print("Array is :",arr)
+res = arr[::-1] #reversing using list slicing
+print("Resultant new reversed array:",res)
+
+# Second method
+#Using reverse() Method
+#The original array
+arr = [11, 22, 33, 44, 55]
+print("Before reversal Array is :",arr)
+arr.reverse() #reversing using reverse()
+print("After reversing Array:",arr)
+
+# Third method
+#Using reversed() Method
+#The original array
+arr = [12, 34, 56, 78]
+print("Original Array is :",arr)
+#reversing using reversed()
+result=list(reversed(arr))
+print("Resultant new reversed Array:",result)
+
