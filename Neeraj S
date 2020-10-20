@@ -1,0 +1,15 @@
+# WGET URL Downloader :- 
+
+
+print('Checking Installation of WGET...')
+try:
+    import wget
+    print('[+] module wget is installed\n')
+    print('[+] Running WGETURLDownloader...\n')
+    inputurl = raw_input('[+] Input URL to Download :-\n')
+    downloadurl = wget.download(inputurl)
+    print('[+] URL Successfully Downloaded! :D ')
+    
+except ModuleNotFoundError:
+    print("module 'wget' is not installed")
+
