@@ -1,0 +1,19 @@
+# Program to Check Website Status
+
+import requests
+
+url = raw_input('[+] Input URL : ')  
+page = requests.get(url)
+print('[+] Checking URL Status... ')
+
+try:
+        if page.status_code == 200:
+            print('[+] STATUS OK - Website is Running')
+        elif page.status_code == 404:
+            print('[+] STATUS NOT FOUND - Website Not Found')
+        elif page.status_code == 403:
+            print('[+] STATUS FORBIDDEN - Website Forbidden Access')  
+        else:
+                print('[+] Please Check URL')
+except:
+    pass
