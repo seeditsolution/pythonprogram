@@ -1,0 +1,15 @@
+def fill(nums):
+    odd=[]
+    even=[]
+    nfin=[]
+    for i in nums:
+        if i%2==0:
+            even.append(i)
+        else:
+            odd.append(i)
+    nfin.append(even)
+    nfin.append(odd)
+    return nfin
+
+nums=list(range(10))
+print(fill(nums))
