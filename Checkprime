@@ -1,0 +1,6 @@
+def checktoPrime(number):
+    for x in range(2,number):
+        if number%x==0:
+            return False
+    return True
+print(checktoPrime(15)) #you can use rather than 15.
