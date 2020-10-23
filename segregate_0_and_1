@@ -1,0 +1,15 @@
+def solve(n):
+    count=0
+    for i in n:
+        if i=='1':
+            count+=1
+    k='1'*count+'0'*(len(n)-count)
+    return k        
+
+if __name__=="__main__":
+    print(solve(input()))
+    
+    
+ #input :0101011101
+ #output :1111110000
+ 
