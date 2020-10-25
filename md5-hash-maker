@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+import hashlib
+import colorama
+from colorama import Fore, Style
+
+str = input('MD5 str: ')
+MD5 = hashlib.md5(str.encode())
+print("MD5 Hash " + str + ":",Fore.GREEN + MD5.hexdigest())
