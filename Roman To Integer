@@ -1,0 +1,15 @@
+    # @param A : string
+    # @return an integer
+    def romanToInt(self, A):
+        
+        d = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        
+        result = 0
+        prev = 0
+        for char in A:
+            result += d[char]
+            if d[char] > prev:
+                result = result - 2*prev
+            prev = d[char]
+        
+        return result
