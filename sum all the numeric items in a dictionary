@@ -1,0 +1,5 @@
+d={'ONE':6,'TWO':22,'THREE':3}
+sum=0
+for i,j in d.items():
+    sum=sum+j
+print(sum)
