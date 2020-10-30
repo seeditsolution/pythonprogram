@@ -1,6 +1,6 @@
-a = float(input('Enter first side: '))
-b = float(input('Enter second side: '))
-c = float(input('Enter third side: '))
+X = float(input('Enter first side: '))
+Y = float(input('Enter second side: '))
+Z = float(input('Enter third side: '))
 
 # calculate the semi-perimeter
 s = (a + b + c) / 2
