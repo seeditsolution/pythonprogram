@@ -1,0 +1,12 @@
+
+
+
+Dict = {1: 'In', 2: 'Life', 3: 'Of'}
+print("\nDictionary with the use of Integer Keys: ")
+print(Dict)
+
+
+Dict = {'Name': 'At', 1: [1, 2, 3, 4]}
+print("\nDictionary with the use of Mixed Keys: ")
+print(Dict)
+
