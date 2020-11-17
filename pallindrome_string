@@ -1,0 +1,7 @@
+s1=input("Enter the string:")
+s1=s1.upper()
+s2=s1[::-1]
+if(s1==s2):
+    print("PALINDROME String")
+else:
+    print("Not a pallindrome string")
