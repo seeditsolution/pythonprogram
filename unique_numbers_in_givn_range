@@ -1,0 +1,22 @@
+def unique(a,b):
+    count=0
+    for i in range(a,b+1):
+        num=i
+        v=[0,0,0,0,0,0,0,0,0,0]
+        while(num):
+            if v[num%10]==True:
+                break
+            v[num%10]=True
+            num=int(num/10)
+        if num==0:
+            print("those numers are :",i)
+            count+=1
+            
+    if count>0:
+        print(count)
+    else:
+        print("No unique numbers are available ")
+a=10
+b=15
+unique(a,b)
+        
