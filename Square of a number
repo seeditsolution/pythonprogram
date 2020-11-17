@@ -1,0 +1,9 @@
+def squarefun(arr):
+    s=0
+    for i in range((len(arr))):
+        s +=sum(arr[i]**2)
+    return s;
+    
+arr = []   
+arr = [int(item) for item in input("Enter the list items : ").split()]
+print(squarefun(arr))
