@@ -1,0 +1,29 @@
+def arms(num):
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** 3
+        temp //= 10
+    if num == sum:
+        print(num,"is an Armstrong number")
+    else:
+        print(num,"is not an Armstrong number")
+def palind():
+    n=int(input("Enter number:"))
+    temp=n
+    rev=0
+    while(n>0):
+        dig=n%10
+        rev=rev*10+dig
+        n=n//10
+    if(temp==rev):
+        print("The number is a palindrome!")
+    else:
+        print("The number isn't a palindrome!")
+
+inp=int(input("1 for armstrong and 2 for palindrome"))
+if inp==1:
+    num1=int(input("enter num"))
+else:
+    palind()
