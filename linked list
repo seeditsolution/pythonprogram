@@ -1,0 +1,94 @@
+class Node(object):
+    def __init__(self,value):
+        self.info=value
+        self.prev=None
+        self.next=None
+
+class DoublyLinkedList(object):
+    def __init__(self):
+        self.start=None
+
+    def display_list(self):
+        if self.start==None:
+            print("List is empty")
+            return
+        p=self.start
+        while p is not None:
+            print(p.info," ",end="")
+            p=p.next
+        print()
+
+    def insert_in_beginning(self,data):
+        temp=Node(data)
+        temp.next=self.start
+        self.start.prev=temp
+        self.start=temp
+    def insert_in_empty_list(self,data):
+        temp=Node(data)
+        self.start=temp
+
+    def insert_at_end(self,data):
+        temp=Node(data)
+        p=self.start
+        while p.next is not None:
+            p=p.next
+        
+        p.next=temp
+        temp.prev=p
+    def createlist(self):
+        n=int(input("Enter the number of nodes:"))
+        if n==0:
+            return
+        data=int(input("Eter the first element to be inserted"))
+        self.insert_in_empty_list(data)
+        for i in range(n-1):
+            data=int(input("Enter the number to be inserted"))
+            self.insert_at_end(data)
+
+    def insert_after(self,data,x):
+        temp=Node(data)
+        p=self.start
+        while p is not None:
+            if p.info==x:
+                break
+            p=p.next
+        if p is None:
+            print(x,"not in the list")
+        else:
+            temp.prev=p
+            temp.next=p.next
+            if p.next is not None:
+                p.next.prev=temp
+            p.next=temp
+
+    def insert_before(self,data,x):
+        temp=Node(data)
+        p=self.start
+        if p.next.info==x:
+            
+            temp.next=p
+            p.prev=temp
+            p=temp
+        while p is not None:
+            if p.info==x:
+                break
+            p=p.next
+        if p is None:
+            print("nont")
+        else:
+            temp.prev=p.prev
+            temp.next=p
+            p.prev.next=temp
+            p.prev=temp
+
+    def del_first_node(self):
+        
+            
+
+
+
+
+
+
+
+        
