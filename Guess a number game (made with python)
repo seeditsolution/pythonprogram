@@ -1,0 +1,31 @@
+while(True) :
+    n = 18
+    print("Guess the number game\n\nYou have 9 Guesses\n\nChosse any 2-digit Number\n")
+    guess = 1
+    while (guess <= 9):
+        guessno = int(input("Type Your Guess Here: "))
+        if guessno < 18:
+            print("\tThe number entered is low than required")
+        elif guessno > 18:
+            print("\tThe number entered is higher than required")
+        elif guessno == 18:
+            print("\n\t\t\tGame Compleated!!!")
+            print("You Have Taken", guess, "Chances To Finish The Game\n\nDeveloped By Arya Chakraborty")
+            break
+        else:
+            print("Wrong Action")
+        print(9 - guess, "chances left")
+        guess = guess + 1
+
+    if guess > 9:
+        print("\nGame is Over\n\nDeveloped By Arya Chakraborty")
+
+    gyg = input("\nDo You Want To Use The Programme Again?"
+                "\n If Yes Then Type 'yes' or else type 'no' : ")
+    if gyg == "yes":
+        continue
+    else:
+        print("\n\nTHANK YOU USING THE PROGRAMME\n"
+              "Developed By Arya Chakraborty")
+        break
+ #This is a guess a number game developed by Arya Chakraborty
