@@ -1,0 +1,27 @@
+def  contalpha(n): 
+      
+    # ASCII value 
+    num = 65
+  
+    # outer loop to handle number of rows 
+-   for i in range(0, n): 
+      
+        # inner loop to handle number of columns 
+        for j in range(0, i+1): 
+          
+            # converting to char 
+            ch = chr(num) 
+          
+            # printing char value  
+            print(ch, end=" ") 
+          
+            # incrementing each column value 
+            num = num +1
+      
+      
+        # ending line after each row 
+        print("\r") 
+  
+# Driver code 
+n = 5
+contalpha(n) 
