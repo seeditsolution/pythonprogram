@@ -1,0 +1,7 @@
+# program to check pallindrome
+a=input()
+b=input()
+if (a==b[-1:0:-1]):
+  print('True')
+else:
+  print('Flase')
