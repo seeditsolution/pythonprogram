@@ -1,0 +1,9 @@
+import pyautogui
+import time
+time.sleep(4)
+# 'randomText.txt' is list of massage.
+with open("randomText.txt") as f:
+    time.sleep(1)
+    pyautogui.typewrite(f.read())
+    time.sleep(1)
+    pyautogui.press("enter")
