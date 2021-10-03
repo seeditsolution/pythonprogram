@@ -1,0 +1,18 @@
+str=input('enter a word or sentence: ')
+cd=0 #count of digits variable
+cv=0 #count of vowels variable
+cc=0 #count of consonents variable
+cs=0 #count of spaces variable
+for ele in str:
+    if ele.isdigit()==True:
+        cd+=1
+    elif ele==" ":
+        cs+=1
+    elif ele=='a' or ele=='e' or ele =='i' or ele=='o' or ele=='u':
+        cv+=1
+    else:
+        cc+=1
+print('no.of digis is %d'%(cd))
+print('no.of spaces is %d'%(cs))
+print('no.of vowels is %d'%(cv))
+print('no.of consonents is %d'%(cc))
